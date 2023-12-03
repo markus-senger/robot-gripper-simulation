@@ -72,7 +72,7 @@ public class HandleGripper : MonoBehaviour
             float newLeft = moveValueLeft;
             if (offsetMoveLeft > 0.006)
             {
-                newLeft = leftInnerBeam.localRotation.eulerAngles.x + (offsetMoveLeft - 0.003f) * 100;
+                newLeft = leftInnerBeam.localRotation.eulerAngles.x + (offsetMoveLeft - 0.004f) * 100;
                 leftInnerBeam.localRotation = MoveLeftInnerBeam(newLeft);
                 leftOuterBeam.localRotation = MoveLeftOuterBeam(newLeft);
                 leftFrontJoint.localRotation = MoveLeftFrontJoint(newLeft);
@@ -82,7 +82,7 @@ public class HandleGripper : MonoBehaviour
             float newRight = moveValueRight;
             if (offsetMoveRight > 0.006)
             {
-                newRight = rightInnerBeam.localRotation.eulerAngles.x + (offsetMoveRight - 0.003f) * 100;
+                newRight = rightInnerBeam.localRotation.eulerAngles.x + (offsetMoveRight - 0.004f) * 100;
                 rightInnerBeam.localRotation = MoveRightInnerBeam(newRight);
                 rightOuterBeam.localRotation = MoveRightOuterBeam(newRight);
                 rightFrontJoint.localRotation = MoveRightFrontJoint(newRight);
@@ -91,7 +91,6 @@ public class HandleGripper : MonoBehaviour
 
             offsetMoveLeft = 0;
             offsetMoveRight = 0;
-
         }
         else
         {
@@ -107,6 +106,7 @@ public class HandleGripper : MonoBehaviour
         leftInnerBeam.localRotation = Quaternion.RotateTowards(leftInnerBeam.localRotation, MoveLeftInnerBeam(moveValueLeft), speedValue * Time.fixedDeltaTime);
         leftOuterBeam.localRotation = Quaternion.RotateTowards(leftOuterBeam.localRotation, MoveLeftOuterBeam(moveValueLeft), speedValue * Time.fixedDeltaTime);
         leftFrontJoint.localRotation = Quaternion.RotateTowards(leftFrontJoint.localRotation, MoveLeftFrontJoint(moveValueLeft), speedValue * Time.fixedDeltaTime);
+        curMoveValueLeft = leftInnerBeam.localRotation.eulerAngles.x;
     }
 
     private Quaternion MoveLeftInnerBeam(float moveValueLeft) => Quaternion.Euler(moveValueLeft, leftInnerBeam.localRotation.eulerAngles.y, leftInnerBeam.localRotation.eulerAngles.z);
@@ -118,6 +118,7 @@ public class HandleGripper : MonoBehaviour
         rightInnerBeam.localRotation = Quaternion.RotateTowards(rightInnerBeam.localRotation, MoveRightInnerBeam(moveValueRight), speedValue * Time.fixedDeltaTime);
         rightOuterBeam.localRotation = Quaternion.RotateTowards(rightOuterBeam.localRotation, MoveRightOuterBeam(moveValueRight), speedValue * Time.fixedDeltaTime);
         rightFrontJoint.localRotation = Quaternion.RotateTowards(rightFrontJoint.localRotation, MoveRightFrontJoint(moveValueRight), speedValue * Time.fixedDeltaTime);
+        curMoveValueLeft = rightInnerBeam.localRotation.eulerAngles.x;
     }
 
     private Quaternion MoveRightInnerBeam(float moveValueRight) => Quaternion.Euler(moveValueRight, rightInnerBeam.localRotation.eulerAngles.y, rightInnerBeam.localRotation.eulerAngles.z);

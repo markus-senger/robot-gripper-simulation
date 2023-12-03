@@ -23,7 +23,7 @@ public class GripperColliderCheck : MonoBehaviour
             ray = new Ray(transform.position, isRight ? transform.forward : -transform.forward);
             if (Physics.Raycast(ray, out hit, 0.02f, LayerMask.GetMask("Dice")))
             {
-                if (hit.distance <= 0.012f)
+                if (hit.distance <= 0.014f)
                 {
                     if (isRight)
                     {
