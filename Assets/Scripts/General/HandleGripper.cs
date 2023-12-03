@@ -72,7 +72,7 @@ public class HandleGripper : MonoBehaviour
             float newLeft = moveValueLeft;
             if (offsetMoveLeft > 0.006)
             {
-                newLeft = leftInnerBeam.localRotation.eulerAngles.x + (offsetMoveLeft - 0.004f) * 100;
+                newLeft = leftInnerBeam.localRotation.eulerAngles.x + (offsetMoveLeft - 0.003f) * 100;
                 leftInnerBeam.localRotation = MoveLeftInnerBeam(newLeft);
                 leftOuterBeam.localRotation = MoveLeftOuterBeam(newLeft);
                 leftFrontJoint.localRotation = MoveLeftFrontJoint(newLeft);
@@ -82,7 +82,7 @@ public class HandleGripper : MonoBehaviour
             float newRight = moveValueRight;
             if (offsetMoveRight > 0.006)
             {
-                newRight = rightInnerBeam.localRotation.eulerAngles.x + (offsetMoveRight - 0.004f) * 100;
+                newRight = rightInnerBeam.localRotation.eulerAngles.x + (offsetMoveRight - 0.003f) * 100;
                 rightInnerBeam.localRotation = MoveRightInnerBeam(newRight);
                 rightOuterBeam.localRotation = MoveRightOuterBeam(newRight);
                 rightFrontJoint.localRotation = MoveRightFrontJoint(newRight);
