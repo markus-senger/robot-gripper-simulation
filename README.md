@@ -12,6 +12,9 @@ It is important to note, however, that the necessary credentials for accessing F
 For integrating the Firestore database in Flutter, Firebase provides a suitable SDK, while for integration in Unity for Windows, the "Google.Cloud.Firestore" NuGet package was manually installed.
 
 
+https://github.com/markus-senger/robot-gripper-simulation/assets/77236323/6b8d62bd-24af-4c3f-bf1d-a257c69c6ea6
+
+
 ## Unity Application Download Information
 The Unity application can be downloaded under [Releases](https://github.com/markus-senger/robot-gripper-simulation/releases/tag/v1-2023-12-03), but please note that the control app is not included in this download.
 
