@@ -11,7 +11,7 @@ It is important to note, however, that the necessary credentials for accessing F
 
 For integrating the Firestore database in Flutter, Firebase provides a suitable SDK, while for integration in Unity for Windows, the "Google.Cloud.Firestore" NuGet package was manually installed.
 
-Please note that due to data transmission via a Google database, minor delays may occur. This app has been developed to showcase the capabilities of Firebase; however, it is worth noting that Firebase may be less suitable for real-time transmission in an industrial environment.
+Please note that due to data transmission via a Google database, minor delays may occur. This app has been developed to showcase the capabilities of Firebase. However, it is worth noting that Firebase may be less suitable for real-time transmission in an industrial environment.
 
 
 https://github.com/markus-senger/robot-gripper-simulation/assets/77236323/6b8d62bd-24af-4c3f-bf1d-a257c69c6ea6
