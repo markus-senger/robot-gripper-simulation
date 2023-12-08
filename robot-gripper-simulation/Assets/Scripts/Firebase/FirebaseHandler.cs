@@ -47,18 +47,19 @@ public class FirebaseHandler : MonoBehaviour
             data.Add("is_pos1", isPos1);
             data.Add("is_pos2", isPos2);
 
-            string pathToServiceAccountKey = "Assets/control-panel-robotic-gripper-firebase-adminsdk-ggh0q-2c6b32518a.json";
-            var jsonString = File.ReadAllText(pathToServiceAccountKey);
-            var builder = new FirestoreClientBuilder
-            {
-                JsonCredentials = jsonString
-            };
-
-            FirestoreDb db = FirestoreDb.Create("control-panel-robotic-gripper", builder.Build());
-
-            CollectionReference collection = db.Collection("RoboticGripper");
             try
             {
+                string pathToServiceAccountKey = "Assets/control-panel-robotic-gripper-firebase-adminsdk-ggh0q-2c6b32518a.json";
+                var jsonString = File.ReadAllText(pathToServiceAccountKey);
+                var builder = new FirestoreClientBuilder
+                {
+                    JsonCredentials = jsonString
+                };
+    
+                FirestoreDb db = FirestoreDb.Create("control-panel-robotic-gripper", builder.Build());
+    
+                CollectionReference collection = db.Collection("RoboticGripper");
+            
                 await collection.Document("c33p54088NhwVib4yqU4").SetAsync(data);
             }
             catch(Exception e)
