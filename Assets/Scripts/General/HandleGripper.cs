@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class HandleGripper : MonoBehaviour
 {
+    [SerializeField] private FirebaseHandler firebaseHandler;
     [SerializeField] private Transform cadRoot;
     [SerializeField] private Transform robot;
 
@@ -29,7 +30,12 @@ public class HandleGripper : MonoBehaviour
     public float offsetMoveRight { get; set; } = 0f;
     public float closeMoveValue { get; private set; } = 43.5f;
     public float openMoveValue { get; private set; } = 0f;
+    public float upMoveValue { get; private set; } = 1.327f;
+    public float downMoveValue { get; private set; } = 1.127f;
+    public float pos1MoveValue { get; private set; } = 0f;
+    public float pos2MoveValue { get; private set; } = 0.3f;
     public float speedValue { get; set; }
+
 
     public GameObject gripperObject { private get; set; }
 
@@ -99,6 +105,8 @@ public class HandleGripper : MonoBehaviour
 
             HandleGripperObject(false);
         }
+
+        CheckGripperStatus();
     }
 
     private void MoveLeft()
@@ -135,5 +143,18 @@ public class HandleGripper : MonoBehaviour
             gripperObject.GetComponent<Rigidbody>().useGravity = open;
             gripperObject.GetComponent<Rigidbody>().isKinematic = !open;
         }
+    }
+
+    private void CheckGripperStatus()
+    {
+        firebaseHandler.UpdateFirebase
+            (
+                curMoveValueLeft == closeMoveValue,
+                curMoveValueLeft == openMoveValue,
+                robot.localPosition.y == downMoveValue,
+                robot.localPosition.y == upMoveValue,
+                robot.localPosition.x == pos1MoveValue,
+                robot.localPosition.x == pos2MoveValue
+            );
     }
 }

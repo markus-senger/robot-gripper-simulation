@@ -54,10 +54,10 @@ public class UIHandler : MonoBehaviour
             handleGripper.moveValueRight = distanceSlider.value;
         });
 
-        moveGripperDownButton.onClick.AddListener(() => handleGripper.targetYPos = 1.127f);
-        moveGripperUpButton.onClick.AddListener(() => handleGripper.targetYPos = 1.327f);
-        moveGripperPos1Button.onClick.AddListener(() => handleGripper.targetXPos = 0f);
-        moveGripperPos2Button.onClick.AddListener(() => handleGripper.targetXPos = 0.3f);
+        moveGripperDownButton.onClick.AddListener(() => handleGripper.targetYPos = handleGripper.downMoveValue);
+        moveGripperUpButton.onClick.AddListener(() => handleGripper.targetYPos = handleGripper.upMoveValue);
+        moveGripperPos1Button.onClick.AddListener(() => handleGripper.targetXPos = handleGripper.pos1MoveValue);
+        moveGripperPos2Button.onClick.AddListener(() => handleGripper.targetXPos = handleGripper.pos2MoveValue);
         moveGripperDownButton.onClick?.Invoke();
         moveGripperPos1Button.onClick?.Invoke();
 

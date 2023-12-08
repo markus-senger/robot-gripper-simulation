@@ -2625,7 +2625,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 718195493}
-  - component: {fileID: 718195494}
+  - component: {fileID: 718195495}
+  - component: {fileID: 718195496}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -2648,7 +2649,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &718195494
+--- !u!114 &718195495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718195492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca9dcb0d4604b49a9fc230fe602b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &718195496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5161,6 +5174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2667bc8db9109d4691cec36955be5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firebaseHandler: {fileID: 718195495}
   cadRoot: {fileID: 1726725628}
   robot: {fileID: 1761853990}
   leftInnerBeam: {fileID: 702752967}
