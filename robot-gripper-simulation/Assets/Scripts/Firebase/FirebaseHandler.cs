@@ -47,7 +47,7 @@ public class FirebaseHandler : MonoBehaviour
             data.Add("is_pos1", isPos1);
             data.Add("is_pos2", isPos2);
 
-            string pathToServiceAccountKey = "Assets/control-panel-robotic-gripper-firebase-adminsdk-ggh0q-9a8ba11343.json";
+            string pathToServiceAccountKey = "Assets/control-panel-robotic-gripper-firebase-adminsdk-ggh0q-2c6b32518a.json";
             var jsonString = File.ReadAllText(pathToServiceAccountKey);
             var builder = new FirestoreClientBuilder
             {
