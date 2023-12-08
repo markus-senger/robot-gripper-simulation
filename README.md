@@ -5,6 +5,8 @@ https://github.com/markus-senger/robot-gripper-simulation/assets/77236323/e2c01b
 
 
 ## Mobile Control App
+![image](https://github.com/markus-senger/robot-gripper-simulation/assets/77236323/d269b44c-d808-4d40-964d-91e763f10b5a)
+
 In addition, a simple mobile control app was developed using Flutter, which displays the current status of the robot and gripper. For this purpose, the Firestore database from Firebase was utilized, enabling mobile monitoring worldwide.
 
 It is important to note, however, that the necessary credentials for accessing Firebase are not included in this repository due to privacy reasons.
